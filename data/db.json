@@ -54,6 +54,16 @@
       "plot": "Test Plot 2",
       "actors": "Ryan McCluskey,Oscar Pearce,Indra Ové,Anna Bolt",
       "id": 5
+    },
+    {
+      "title": "",
+      "director": "",
+      "year": "",
+      "actors": "",
+      "plot": "",
+      "genre": "",
+      "rating": "",
+      "id": 6
     }
   ]
 }

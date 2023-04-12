@@ -96,7 +96,37 @@ function editMovieById(id){
             .catch(error => console.error(error));
 }
 
+// ******** ADD NEW MOVIE ***************
 
+function addNewMovie(){
+    fetch(`http://localhost:3000/movies`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                title: document.getElementById("addMovieTitle").value,
+                director: document.getElementById("addMovieDir").value,
+                year: document.getElementById("addMovieYear").value,
+                actors: document.getElementById("addMovieActors").value,
+                plot: document.getElementById("addMoviePlot").value,
+                genre: document.getElementById("addMovieGenre").value,
+                rating: document.getElementById("addMovieRating").value
+            }
+        )
+    })
+        .then(resp => resp.json())
+        .then(movieData => console.log(movieData))
+        .catch(error => console.error(error));
+}
+
+function addMovieModal(){
+
+}
+document.getElementById("addMovie").addEventListener("click", function (e){
+    addNewMovie()
+})
 
 
 

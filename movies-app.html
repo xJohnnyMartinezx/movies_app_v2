@@ -11,6 +11,43 @@
 
 </head>
 <body>
+<div>
+    <button id="addMovie" type="button" class="btn btn-primary">Add New Movie
+    </button>
+
+    <div class="modal" id="addMovieModal" tabIndex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="addMovieTitle" class="form-label" style="color: black">Title</label>
+                    <input id="addMovieTitle" type="text" placeholder="">
+                    <label for="addMovieDir" class="form-label" style="color: black">Director</label>
+                    <input id="addMovieDir" type="text" placeholder="">
+                    <label for="addMovieYear" class="form-label" style="color: black">Year</label>
+                    <input id="addMovieYear" type="text" placeholder="">
+                    <label for="addMovieActors" class="form-label" style="color: black">Actors</label>
+                    <input id="addMovieActors" type="text" placeholder="">
+                    <label for="addMoviePlot" class="form-label" style="color: black">Plot</label>
+                    <input id="addMoviePlot" type="text" placeholder="">
+                    <label for="addMovieGenre" class="form-label" style="color: black">Genre</label>
+                    <input id="addMovieGenre" type="text" placeholder="">
+                    <label for="addMovieRating" class="form-label" style="color: white">Rating</label>
+                    <input type="text" class="form-control" id="addMovieRating" placeholder="">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveNewMovie">Save New Movie</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 <div id="movie-cards" class="d-flex">
 </div>
 
