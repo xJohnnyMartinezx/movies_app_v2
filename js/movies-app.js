@@ -14,22 +14,22 @@
     }
     // *******************************************************************************************************
 
+// *********** POPULATING MOVIE CARDS ON HTML **************
 function loadMovies() {
     fetch("http://localhost:3000/movies")
         .then(resp => resp.json())
         .then(movieData => {
             // console.log(movieData)
            let moviesHTML = movieData.map(movie =>{
-                // language = html;
-                return `<div class="card" style="width: 18rem;">
-                        <img src="${movie.poster}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title" id="movie-title">${movie.title}</h5>
-                        <p class="card-text" id="movie-plot">${movie.plot}</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="populateEditModal(${movie.id})">Edit</button>
-                      </div>
-                    </div>
-        `
+
+                return `<div class="card" style="width: 18rem;" id="cardId" data-id="${movie.id}">
+                            <img src="${movie.poster}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" id="movie-title">${movie.title}</h5>
+                                <p class="card-text" id="movie-plot">${movie.plot}</p>
+                                <button type="button" class="edit" id="editBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="popUpModal(${movie.id})">Edit</button>
+                            </div>
+                        </div>`
             })
             document.getElementById("movie-cards").innerHTML=moviesHTML.join("");
 
@@ -38,93 +38,66 @@ function loadMovies() {
         );
 }
 
-    // *********** EDIT MOVIE MODAL EVENT LISTENER ************
+// *********** WHEN EDIT BTN IS THIS FUNCTION IS TRIGGERED AND popUpModal FUNCTION IS CALLED ************
 
-
-    //
-    // const myModal = document.getElementById('myModal')
-    // const userEditedTitle = document.getElementById('userEditedTitle')
-    // const userEditedDir = document.getElementById('userEditedDir')
-    // const userEditedYear = document.getElementById('userEditedYear')
-    //
-    //
-    // myModal.addEventListener('shown.bs.modal', () => {
-    //     userEditedTitle.focus()
-    //     userEditedDir.focus()
-    //     userEditedYear.focus()
-    // })
-
-function populateEditModal(id) {
+function popUpModal(id) {
     fetch(`http://localhost:3000/movies/${id}`)
         .then(resp => resp.json())
         .then(movieData => {
-            console.log(movieData)
-            let editMoviesHTML = [movieData].map(movie => {
-                // console.log(movie.title);
-                return popUpModal(movie)
+            console.log(movieData.id)
+            // movieData.title
+            populateEditModal(movieData);
+
+            document.getElementById("saveEdits").addEventListener("click", function (e){
+                e.preventDefault();
+                editMovieById(movieData.id);
+                $('#myModal').modal('hide');
             })
-            document.getElementById("myModal").innerHTML=editMoviesHTML;
         })
-
-}
-
-// const myModal = document.getElementById('myModal')
-// const myInput = document.getElementById('myInput')
-// const userEditedDir = document.getElementById('userEditedDir')
-// const userEditedYear = document.getElementById('userEditedYear')
-
-
-// myModal.addEventListener('shown.bs.modal', () => {
-//     myInput.focus()
-//     // userEditedDir.focus()
-//     // userEditedYear.focus()
-// })
-
-function popUpModal(movie){
+    }
+// ***** POPULATES THE MODAL WITH PRESET MOVIE DATA VALUES TO BE EDITED.
+function populateEditModal(movie){
     console.log(movie.title)
-    return `<!-- <div class="modal" id="myModal" tabIndex="-1">-->
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">${movie.title}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <label for="userEditedTitle" class="form-label" style="color: black">Title</label>
-                <input id="userEditedTitle" type="text" placeholder="${movie.title}">
-                <label for="userEditedDir" class="form-label" style="color: black">Director</label>
-                <input id="userEditedDir" type="text" placeholder="${movie.director}">
-                <label for="userEditedYear" class="form-label" style="color: black">Year</label>
-                <input id="userEditedYear" type="text" placeholder="${movie.year}">
-                </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-            </div>
-        </div>
-<!--    </div>-->`
-}
+    let currentTitle = document.getElementById("movieTitle").value = "You are Currently Editing" + movie.title
+    let userEditedTitle = document.getElementById("userEditedTitle").value = movie.title
+    let userEditedDir = document.getElementById("userEditedDir").value = movie.director
+    let userEditedYear = document.getElementById("userEditedYear").value = movie.year
+    let userEditedActors = document.getElementById("userEditedActors").value = movie.actors
+    let userEditedPlot = document.getElementById("userEditedPlot").value = movie.plot
+    let userEditedGenre = document.getElementById("userEditedGenre").value = movie.genre
+    let userEditedRating = document.getElementById("userEditedRating").value = movie.rating
+    }
 
 // ************************************************************
 
 // EDIT MOVIE
 
-// function editMovieById(id){
-//         fetch(`http://localhost:3000/movies/${id}`, {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify()
-//         })
-//             .then(resp => resp.json())
-//             .then(movieData => console.log(movieData))
-//             .catch(error => console.error(error));
-// }
+function editMovieById(id){
+        fetch(`http://localhost:3000/movies/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                {
+                    title: document.getElementById("userEditedTitle").value,
+                    director: document.getElementById("userEditedDir").value,
+                    year: document.getElementById("userEditedYear").value,
+                    actors: document.getElementById("userEditedActors").value,
+                    plot: document.getElementById("userEditedPlot").value,
+                    genre: document.getElementById("userEditedGenre").value,
+                    rating: document.getElementById("userEditedRating").value
+                }
+                )
+        })
+            .then(resp => resp.json())
+            .then(movieData => console.log(movieData))
+            .catch(error => console.error(error));
+}
 
-// function editMovieProperties();
+
+
 
 
 

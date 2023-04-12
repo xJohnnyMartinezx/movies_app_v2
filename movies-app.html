@@ -14,31 +14,39 @@
 <div id="movie-cards" class="d-flex">
 </div>
 
-<!--<div class="modal" id="myModal" tabIndex="-1">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title">${movie.title}</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <label for="userEditedTitle" class="form-label" style="color: black">Title</label>-->
-<!--                <input id="userEditedTitle" type="text" placeholder="${movie.title}">-->
-<!--                <label for="userEditedDir" class="form-label" style="color: black">Title</label>-->
-<!--                <input id="userEditedDir" type="text" placeholder="${movie.director}">-->
-<!--                <label for="userEditedYear" class="form-label" style="color: black">Title</label>-->
-<!--                <input id="userEditedYear" type="text" placeholder="${movie.year}">-->
-<!--            </div>-->
+<div class="modal" id="myModal" tabIndex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="movieTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="userEditedTitle" class="form-label" style="color: black">Title</label>
+                <input id="userEditedTitle" type="text" placeholder="">
+                <label for="userEditedDir" class="form-label" style="color: black">Director</label>
+                <input id="userEditedDir" type="text" placeholder="">
+                <label for="userEditedYear" class="form-label" style="color: black">Year</label>
+                <input id="userEditedYear" type="text" placeholder="">
+                <label for="userEditedActors" class="form-label" style="color: black">Actors</label>
+                <input id="userEditedActors" type="text" placeholder="">
+                <label for="userEditedPlot" class="form-label" style="color: black">Plot</label>
+                <input id="userEditedPlot" type="text" placeholder="">
+                <label for="userEditedGenre" class="form-label" style="color: black">Genre</label>
+                <input id="userEditedGenre" type="text" placeholder="">
+                <label for="userEditedRating" class="form-label" style="color: white">Rating</label>
+                <input type="text" class="form-control" id="userEditedRating" placeholder="">
+            </div>
 
-<!--            <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveEdits">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
- <div class="modal" id="myModal" tabIndex="-1">
+ <div id="editModal">
 
  </div>
 
