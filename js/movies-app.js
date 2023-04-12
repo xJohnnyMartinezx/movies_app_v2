@@ -24,9 +24,9 @@ function loadMovies() {
                 return `<div class="card" style="width: 18rem;">
                         <img src="${movie.poster}" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">${movie.title}</h5>
-                        <p class="card-text">${movie.plot}</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Launch demo modal</button>
+                        <h5 class="card-title" id="movie-title">${movie.title}</h5>
+                        <p class="card-text" id="movie-plot">${movie.plot}</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Edit</button>
                       </div>
                     </div>
         `
@@ -38,6 +38,7 @@ function loadMovies() {
         );
 }
 
+    // *********** EDIT MOVIE MODAL EVENT LISTENER ************
 
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('myInput')
@@ -45,5 +46,10 @@ function loadMovies() {
     myModal.addEventListener('shown.bs.modal', () => {
         myInput.focus()
     })
+// ************************************************************
+
+
+
+
 
 
