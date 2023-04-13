@@ -1,4 +1,14 @@
 "use strict";
+
+$(document).ready(function () {
+    $(".gsc-search-button-v2").click(function () {
+        // e.preventDefault();
+        console.log("search bnt clicked")
+        let userSearchVal = $("#gsc-i-id1").val
+
+        userImgSearch(userSearchVal);
+    });
+});
     // ************ LOADER *******************
     $('body').append('<div style="" id="loadingDiv" ><img id="loading-image" src="/img/loading.gif" alt="Loading..." /></div>');
     $(window).on('load', function () {
@@ -121,13 +131,29 @@ function addNewMovie(){
         .catch(error => console.error(error));
 }
 
-function addMovieModal(){
-
-}
-document.getElementById("addMovie").addEventListener("click", function (e){
+document.getElementById("saveNewMovie").addEventListener("click", function (e){
     addNewMovie()
+    $('#addMovieModal').modal('hide');
 })
 
+function userImgSearch(userSearch) {
+    fetch(`https://www.googleapis.com/customsearch/v1?key=${GOO_SEARCH_KEY}&cx=${GOO_SEARCH_ID}&q=${userSearch}`, {
+        method: "GET"
+    })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+}
+
+// userImgSearch("indiana jones");
+
+// let userSearch = document.getElementsByClassName("gsc-search-button-v2")
+//
+//     userSearch.addEventListener("click", function (){
+//     let userSearchVal = document.getElementById("gsc-i-id1").value
+//
+//     userImgSearch(userSearchVal);
+// })
 
 
 

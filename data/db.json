@@ -56,14 +56,24 @@
       "id": 5
     },
     {
-      "title": "",
-      "director": "",
-      "year": "",
-      "actors": "",
-      "plot": "",
-      "genre": "",
-      "rating": "",
+      "title": "test movie",
+      "director": "test dir",
+      "year": "2056",
+      "actors": "test, test2, test3, test4",
+      "plot": "sdfgnhsfgmnjsfgj",
+      "genre": "drama, action, scifi",
+      "rating": "4",
       "id": 6
+    },
+    {
+      "title": "test movie 2",
+      "director": "test dir 2",
+      "year": "2047",
+      "actors": "wertg, ewrfg, erg, ergqerg",
+      "plot": "edfbdsfg wefgknwoehg owoefg owejrg lowjenrglhnwfro oejfngowke fgl oi owejf gowenfrgoinadfegob",
+      "genre": "erhreh, wrethertyj, ertjyhsdfgh, shwrth",
+      "rating": "",
+      "id": 7
     }
   ]
 }
