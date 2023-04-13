@@ -24,8 +24,8 @@ function loadMovies() {
            let moviesHTML = movieData.map(movie =>{
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
-                         <div class="card mx-auto" style="width: 100%;" id="cardId" data-id="${movie.id}">
-                            <img src="${movie.poster}" class="card-img-top" style="width: 80%; height: 80%" alt="...">
+                         <div class="card mx-auto px-2" style="width: 100%;" id="cardId" data-id="${movie.id}">
+                            <img src="${movie.poster}" class="card-img-top mx-auto" style="width: 80%; height: 80%" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title" id="movie-title">${movie.title}</h5>
                                     <p class="card-text" id="movie-dir"><b>Director:</b> ${movie.director}</p>
