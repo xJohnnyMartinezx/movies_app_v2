@@ -13,25 +13,25 @@
     },
     {
       "id": 2,
+      "title": "Tenet",
+      "director": "Christopher Nolan",
+      "year": "2020",
+      "actors": "Elizabeth Debicki, Robert Pattinson, John David Washington, Aaron Taylor-Johnson",
+      "plot": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      "genre": "Action, Sci-Fi",
+      "rating": "4",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SX300.jpg"
+    },
+    {
+      "id": 3,
       "title": "Wonder Woman",
       "director": "Patty Jenkins",
       "year": "2017",
       "actors": "Gal Gadot, Chris Pine",
-      "plot": "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.dfgjhrtyjer tyrthrthrthrt",
+      "plot": "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.",
       "genre": "Action, Sci-Fi",
       "rating": "5",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROZ_IaLEQWhPsEw-gojU3hNJ9gj5-hPgSLNnRH3LwDKygdoaQV&s"
-    },
-    {
-      "id": 3,
-      "title": "Dune",
-      "director": "Denis Villeneuve",
-      "year": "2021",
-      "actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Jason Momoa, Stellan Skarsgård",
-      "plot": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence, only those who can conquer their own fear will survive. fd dghsrtsrtuwsfghsrthsrhsrt srthsrtyhwrtywretyherg",
-      "genre": "Action, Adventure, Sci-Fi",
-      "rating": "3",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtd8G5WA6jCcr8Ft0MVEWGLhHGWlsE00aqPzUGj1TDAjrDtD4y&s"
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVjfGgqesqKhkkQGTVjddFf-J0F0rV5H6i5tgG22QdgqP4MOo&s"
     },
     {
       "id": 4,
@@ -50,10 +50,10 @@
       "director": "Denis Villeneuve",
       "year": "2021",
       "actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Jason Momoa, Stellan Skarsgård",
-      "plot": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence, only those who can conquer their own fear will survive. fd dghsrtsrtuwsfghsrthsrhsrt srthsrtyhwrtywretyherggdhmjdghjdtyj",
+      "plot": "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence, only those who can conquer their own fear will survive.",
       "genre": "Action, Adventure, Sci-Fi",
       "rating": "3",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2MmkRqLjmqWPQFtGmZuJcDidvgCsbHZth-fWkvkCsYresnzK2&s"
+      "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQPqS6UaUbAFXbexufzQLa9PrCxjjw5MFTsEjsDC0ppVOhBcrmw"
     },
     {
       "id": 6,
@@ -61,7 +61,7 @@
       "director": "Jaume Collet-Serra",
       "year": "2022",
       "actors": "Dwayne Johnson, Sarah Shahi, Henry Cavill, Pierce Brosnan, Quintessa Swindell, Noah Centineo",
-      "plot": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone.",
+      "plot": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone." ,
       "genre": "Action, Adventure, Sci-Fi",
       "rating": "3",
       "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7z46quZTThLvU4GVoaKuD0at1K9oUCdnI8C4O8lwm6F1KpYFt"
@@ -72,7 +72,7 @@
       "director": "Alex Proyas",
       "year": "2009",
       "actors": "Nicolas Cage, Rose Byrne, Chandler Canterbury, Lara Robinson, Nadia Townsend, Liam Hemsworth",
-      "plot": "Fifty years after it was buried in a time capsule, a schoolgirl's cryptic document falls into the hands of Caleb Koestler, the son of professor John Koestler (Nicolas Cage). John figures out that the encoded message accurately lists every major disaster from the past five decades, and predicts three future calamities -- one a global cataclysm. When his warnings fall on deaf ears, John enlists the help of the prophetic author's daughter and granddaughter to try to avert the ultimate disaster.",
+      "plot": "Fifty years after it was buried in a time capsule, a schoolgirl's cryptic document falls into the hands of Caleb Koestler, the son of professor John Koestler (Nicolas Cage). John figures out that the encoded message accurately lists every major disaster from the past five decades, and predicts three future calamities -- one a global cataclysm. When his warnings fall on deaf ears, John enlists the help of the prophetic author's daughter and granddaughter to try to avert the ultimate disaster." ,
       "genre": "Action, Adventure, Sci-Fi, Thriller",
       "rating": "4",
       "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwRJPhw03lFZboKq6GVRhV9rDeGisa30BM3k5CWQbEH5959wBP"
@@ -83,7 +83,7 @@
       "director": "Martin Scorsese",
       "year": "2006",
       "actors": "Vera Farmiga, Jack Nicholson, Leonardo DiCaprio, Matt Damon, Mark Wahlberg",
-      "plot": "South Boston cop Billy Costigan (Leonardo DiCaprio) goes under cover to infiltrate the organization of gangland chief Frank Costello (Jack Nicholson). As Billy gains the mobster's trust, a career criminal named Colin Sullivan (Matt Damon) infiltrates the police department and reports on its activities to his syndicate bosses. When both organizations learn they have a mole in their midst, Billy and Colin must figure out each other's identities to save their own lives.",
+      "plot": "South Boston cop Billy Costigan (Leonardo DiCaprio) goes under cover to infiltrate the organization of gangland chief Frank Costello (Jack Nicholson). As Billy gains the mobster's trust, a career criminal named Colin Sullivan (Matt Damon) infiltrates the police department and reports on its activities to his syndicate bosses. When both organizations learn they have a mole in their midst, Billy and Colin must figure out each other's identities to save their own lives." ,
       "genre": "Crime, Drama, Thriller",
       "rating": "4",
       "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSU0SP40gBSnIxxWMpN4-OYUXDRKsOFZX6L5dNv0srZlwKiAlvy"

@@ -20,7 +20,7 @@ function loadMovies() {
     fetch("http://localhost:3000/movies")
         .then(resp => resp.json())
         .then(movieData => {
-            // console.log(movieData)
+            // console.log("line 23: " + movieData)
            let moviesHTML = movieData.map(movie =>{
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
@@ -39,7 +39,6 @@ function loadMovies() {
                         </section>`
             })
             document.getElementById("movie-cards").innerHTML=moviesHTML.join("");
-
         })
         .catch(error => {console.error(error)}
         );
@@ -54,7 +53,6 @@ function popUpModal(id) {
             console.log(movieData.id)
             // movieData.title
             populateEditModal(movieData);
-
             document.getElementById("saveEdits").addEventListener("click", function (){
                 // e.preventDefault();
                 console.log("line 60: " + movieData.id)
@@ -84,6 +82,7 @@ function popUpModal(id) {
                     .catch(error => console.error(error));
 
                 $('#myModal').modal('hide');
+                clearEditModal();
                 loadMovies();
             })
             document.getElementById("deleteMovie").addEventListener("click", function (){
@@ -117,8 +116,7 @@ function populateEditModal(movie){
 
 // ************************************************************
 
-function clearEditModal(movie){
-    console.log("line 121 ID: " + movie.id)
+function clearEditModal(){
 
     document.getElementById("userEditedTitle").value = ""
     document.getElementById("userEditedDir").value = ""
@@ -128,6 +126,7 @@ function clearEditModal(movie){
     document.getElementById("userEditedGenre").value = ""
     document.getElementById("userEditedRating").value = ""
     document.getElementById("userEditedPoster").value = ""
+    document.getElementById("gsc-i-id2").value = ""
 }
 
 // EDIT MOVIE
