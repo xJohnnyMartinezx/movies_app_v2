@@ -24,7 +24,7 @@ function loadMovies() {
            let moviesHTML = movieData.map(movie =>{
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
-                         <div class="card mx-auto px-2" style="width: 100%;" id="cardId" data-id="${movie.id}">
+                         <div class="card mx-auto px-2" style="width: 100%;" id="cardId">
                             <h5 class="card-title" id="movie-title">${movie.title}</h5>
                             <img src="${movie.poster}" class="card-img-top mx-auto" style="width: 80%; height: 80%" alt="...">
                                 <div class="card-body">
@@ -51,13 +51,38 @@ function popUpModal(id) {
     fetch(`http://localhost:3000/movies/${id}`)
         .then(resp => resp.json())
         .then(movieData => {
-            // console.log(movieData.id)
+            console.log(movieData.id)
             // movieData.title
             populateEditModal(movieData);
 
             document.getElementById("saveEdits").addEventListener("click", function (){
                 // e.preventDefault();
-                editMovieById(movieData.id);
+                console.log("line 60: " + movieData.id)
+
+                fetch(`http://localhost:3000/movies/${movieData.id}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(
+                        {
+                            id: movieData.id,
+                            title: document.getElementById("userEditedTitle").value,
+                            director: document.getElementById("userEditedDir").value,
+                            year: document.getElementById("userEditedYear").value,
+                            actors: document.getElementById("userEditedActors").value,
+                            plot: document.getElementById("userEditedPlot").value,
+                            genre: document.getElementById("userEditedGenre").value,
+                            rating: document.getElementById("userEditedRating").value,
+                            poster: document.getElementById("userEditedPoster").value
+
+                        }
+                    )
+                })
+                    .then(resp => resp.json())
+                    .then(movieData => console.log(movieData))
+                    .catch(error => console.error(error));
+
                 $('#myModal').modal('hide');
                 loadMovies();
             })
@@ -69,7 +94,7 @@ function popUpModal(id) {
 
             })
             document.getElementById("editCloseBtn").addEventListener("click", function (){
-                clearEditModal();
+                clearEditModal(movieData);
                 $('#myModal').modal('hide');
 
             })
@@ -93,7 +118,7 @@ function populateEditModal(movie){
 // ************************************************************
 
 function clearEditModal(movie){
-    // console.log(movie.title)
+    console.log("line 121 ID: " + movie.id)
 
     document.getElementById("userEditedTitle").value = ""
     document.getElementById("userEditedDir").value = ""
@@ -107,31 +132,31 @@ function clearEditModal(movie){
 
 // EDIT MOVIE
 
-function editMovieById(id){
-        fetch(`http://localhost:3000/movies/${id}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(
-                {
-                    id: id,
-                    title: document.getElementById("userEditedTitle").value,
-                    director: document.getElementById("userEditedDir").value,
-                    year: document.getElementById("userEditedYear").value,
-                    actors: document.getElementById("userEditedActors").value,
-                    plot: document.getElementById("userEditedPlot").value,
-                    genre: document.getElementById("userEditedGenre").value,
-                    rating: document.getElementById("userEditedRating").value,
-                    poster: document.getElementById("userEditedPoster").value
-
-                }
-                )
-        })
-            .then(resp => resp.json())
-            .then(movieData => console.log(movieData))
-            .catch(error => console.error(error));
-}
+// function editMovieById(id){
+//         fetch(`http://localhost:3000/movies/${id}`, {
+//             method: "PATCH",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(
+//                 {
+//                     id: id,
+//                     title: document.getElementById("userEditedTitle").value,
+//                     director: document.getElementById("userEditedDir").value,
+//                     year: document.getElementById("userEditedYear").value,
+//                     actors: document.getElementById("userEditedActors").value,
+//                     plot: document.getElementById("userEditedPlot").value,
+//                     genre: document.getElementById("userEditedGenre").value,
+//                     rating: document.getElementById("userEditedRating").value,
+//                     poster: document.getElementById("userEditedPoster").value
+//
+//                 }
+//                 )
+//         })
+//             .then(resp => resp.json())
+//             .then(movieData => console.log(movieData))
+//             .catch(error => console.error(error));
+// }
 
 // ******** ADD NEW MOVIE ***************
 
