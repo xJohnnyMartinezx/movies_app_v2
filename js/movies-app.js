@@ -1,7 +1,7 @@
 "use strict";
 
     // ************ LOADER *******************
-    $('body').append('<div style="" id="loadingDiv" ><img id="loading-image" src="/img/loading.gif" alt="Loading..." /></div>');
+    $('body').append('<div style="" class="d-flex justify-content-center" id="loadingDiv" ><img id="loading-image" src="/img/loading.gif" alt="Loading..." /></div>');
     $(window).on('load', function () {
         setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
     });
@@ -115,6 +115,7 @@ function editMovieById(id){
             },
             body: JSON.stringify(
                 {
+                    id: id,
                     title: document.getElementById("userEditedTitle").value,
                     director: document.getElementById("userEditedDir").value,
                     year: document.getElementById("userEditedYear").value,
