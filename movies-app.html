@@ -12,46 +12,65 @@
 
 </head>
 <body>
-<section class="row container-fluid mx-0 px-0">
+<nav class="navbar sticky-top bg-dark navbar-expand-lg bg-body-tertiary py-5 pb-3" data-bs-theme="dark">
+    <div class="container-fluid">
+        <h5 class="navbar-brand" style="color: white">FLIXNET</h5>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--                </li>-->
+            </ul>
+            <button id="addMovie" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addMovieModal">Add New Movie</button>
+            <form class="d-flex px-3" role="search">
+                <input class="form-control me-2 px-3" id="userInputSearch" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" id="userLocalSearch" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<section class="row container-fluid mx-0 px-0 pt-4">
 
 <div>
-    <button id="addMovie" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMovieModal">Add New Movie
-    </button>
+
 </div>
 
     <div id="movie-cards" class="d-flex row container-fluid mx-auto">
     </div>
 
-    <div class="modal" id="addMovieModal" tabIndex="-1">
+    <div class="modal" data-modal-color="bluegray" id="addMovieModal" tabIndex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-
+                    <h5 class="modal-title" style="color: white"> Add a new movie.</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <label for="addMovieTitle" class="form-label" style="color: black"><b>Title: </b></label>
-                    <input id="addMovieTitle" type="text" placeholder="">
-                    <label for="addMovieDir" class="form-label" style="color: black"><b>Director: </b></label>
-                    <input id="addMovieDir" type="text" placeholder="">
-                    <label for="addMovieYear" class="form-label" style="color: black"><b>Year: </b></label>
-                    <input id="addMovieYear" type="text" placeholder="">
-                    <label for="addMovieActors" class="form-label" style="color: black"><b>Actors: </b></label>
-                    <input id="addMovieActors" type="text" placeholder="">
-                    <label for="addMovieGenre" class="form-label" style="color: black"><b>Genre: </b></label>
-                    <input id="addMovieGenre" type="text" placeholder="">
-                    <label for="addMovieRating" class="form-label" style="color: black"><b>Rating: </b></label>
-                    <input id="addMovieRating" type="text"  placeholder="">
-                    <label for="addMoviePlot" class="form-label" style="color: black"><b>Plot: </b></label>
-                    <textarea id="addMoviePlot" placeholder=""></textarea>
+                <div class="modal-body row col-12">
+                    <label for="addMovieTitle" class="form-label" style="color: white"><b>Title: </b></label>
+                    <input id="addMovieTitle" type="text" style="color: white">
+                    <label for="addMovieDir" class="form-label" style="color: white"><b>Director: </b></label>
+                    <input id="addMovieDir" type="text" style="color: white">
+                    <label for="addMovieYear" class="form-label" style="color: white"><b>Year: </b></label>
+                    <input id="addMovieYear" type="text" style="color: white">
+                    <label for="addMovieActors" class="form-label" style="color: white"><b>Actors: </b></label>
+                    <input id="addMovieActors" type="text" style="color: white">
+                    <label for="addMovieGenre" class="form-label" style="color: white"><b>Genre: </b></label>
+                    <input id="addMovieGenre" type="text" style="color: white">
+                    <label for="addMovieRating" class="form-label" style="color: white"><b>Rating: </b></label>
+                    <input id="addMovieRating" type="text"  style="color: white">
+                    <label for="addMoviePlot" class="form-label" style="color: white"><b>Plot: </b></label>
+                    <textarea id="addMoviePlot" style="color: white"></textarea>
                     <p><b>Search for a movie poster, then copy the "Image address"</b></p>
                     <div class="gcse-search" id="newMovieUserImg"></div>
-                    <label for="addMoviePoster" class="form-label" style="color: black"><b>Paste "image address" Here: </b></label>
-                    <input id="addMoviePoster" type="text" placeholder="">
+                    <label for="addMoviePoster" class="form-label" style="color: white"><b>Paste "image address" Here: </b></label>
+                    <input id="addMoviePoster" type="text" style="color: white">
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" id="addMovieCloseBtn" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="saveNewMovie">Save New Movie</button>
                 </div>
             </div>
@@ -61,68 +80,71 @@
 
 
 
-<div class="modal" id="myModal" tabIndex="-1">
+<div class="modal" data-modal-color="bluegray" id="myModal" tabIndex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="movieTitle"></h5>
+<!--                <label for="movieTitle" class="form-label" style="color: white"><b>You are editing: </b></label>-->
+                <p class="modal-title" id="movieTitle" style="color: black; font-size: 2em"> </p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <label for="userEditedTitle" class="form-label" style="color: black"><b>Title: </b></label>
-                <input id="userEditedTitle" type="text" placeholder="">
-                <label for="userEditedDir" class="form-label" style="color: black"><b>Director: </b></label>
-                <input id="userEditedDir" type="text" placeholder="">
-                <label for="userEditedYear" class="form-label" style="color: black"><b>Year: </b></label>
-                <input id="userEditedYear" type="text" placeholder="">
-                <label for="userEditedActors" class="form-label" style="color: black"><b>Cast: </b></label>
-                <input id="userEditedActors" type="text" placeholder="">
-                <label for="userEditedGenre" class="form-label" style="color: black"><b>Genre: </b></label>
-                <input id="userEditedGenre" type="text" placeholder="">
-                <label for="userEditedRating" class="form-label" style="color: black"><b>Rating: </b></label>
-                <input type="text" id="userEditedRating" placeholder="">
-                <label for="userEditedPlot" class="form-label" style="color: black"><b>Plot: </b></label>
-                <textarea id="userEditedPlot" placeholder=""></textarea>
+            <div class="modal-body row col-12">
+                <label for="userEditedTitle" class="form-label" style="color: black; font-size: 1.2em"><b>Title: </b></label>
+                <input id="userEditedTitle" type="text" style="color: white">
+                <label for="userEditedDir" class="form-label" style="color: black; font-size: 1.2em"><b>Director: </b></label>
+                <input id="userEditedDir" type="text" style="color: white">
+                <label for="userEditedYear" class="form-label" style="color: black; font-size: 1.2em"><b>Year: </b></label>
+                <input id="userEditedYear" type="text" style="color: white">
+                <label for="userEditedActors" class="form-label" style="color: black; font-size: 1.2em"><b>Cast: </b></label>
+                <input id="userEditedActors" type="text" style="color: white">
+                <label for="userEditedGenre" class="form-label" style="color: black; font-size: 1.2em"><b>Genre: </b></label>
+                <input id="userEditedGenre" type="text" style="color: white">
+                <label for="userEditedRating" class="form-label" style="color: black; font-size: 1.2em"><b>Rating: </b></label>
+                <input type="text" id="userEditedRating" style="color: white">
+                <label for="userEditedPlot" class="form-label" style="color: black; font-size: 1.2em"><b>Plot: </b></label>
+                <textarea id="userEditedPlot" style="color: white"></textarea>
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault"><b>Would you like to edit the movie poster?</b></label>
+                    <label class="form-check-label" for="flexSwitchCheckDefault" style="color: black; font-size: 1.2em"><b>Would you like to edit the movie poster?</b></label>
                 </div>
                 <div id="userImgSearchOnEdit" style="display: none">
                     <p><b>Search for a movie poster, then copy the "Image address"</b></p>
                     <div class="gcse-search" id="EditedUserImg"></div>
                     <label for="userEditedPoster" class="form-label" style="color: black"><b>Paste "image address" Here: </b></label>
-                    <input id="userEditedPoster" type="text" placeholder="">
+                    <input id="userEditedPoster" type="text" style="color: white">
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveEdits">Save changes</button>
+                <button type="button" class="btn btn-danger" id="deleteMovie" data-bs-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary" id="editCloseBtn" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="saveEdits">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 
-    <div class="modal" id="movieDetailsModal" tabindex="-1">
+    <div class="modal" data-modal-color="bluegray" id="movieDetailsModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="movieDetails-title"><b></b></h5>
+                    <h5 class="modal-title" id="movieDetails-title" style="font-size: 2em"><b></b></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <label for="movieDetails-dir" class="form-label" style="color: black"><b>Director:</b></label>
-                    <p class="card-text" id="movieDetails-dir" style="color: black"><b></b> </p>
-                    <label for="movieDetails-year" class="form-label" style="color: black"><b>Year:</b></label>
-                    <p class="card-text" id="movieDetails-year"><b>Year:</b> </p>
-                    <label for="movieDetails-actors" class="form-label" style="color: black"><b>Cast:</b></label>
-                    <p class="card-text" id="movieDetails-actors"><b>Cast:</b> </p>
-                    <label for="movieDetails-genre" class="form-label" style="color: black"><b>Genre: </b></label>
-                    <p class="card-text" id="movieDetails-genre"><b>Genre:</b> </p>
-                    <label for="movieDetails-rating" class="form-label" style="color: black"><b>Rating: </b></label>
-                    <p class="card-text" id="movieDetails-rating"><b>Rating:</b> </p>
+                <div class="modal-body row col-12">
+                    <label for="movieDetails-dir" class="form-label" style="color: black; font-size: 1.2em"><b>Director:</b></label>
+                    <p class="card-text" id="movieDetails-dir" style=" font-size: 1.2em"><b></b> </p>
+                    <label for="movieDetails-year" class="form-label" style="color: black; font-size: 1.2em"><b>Year:</b></label>
+                    <p class="card-text" id="movieDetails-year" style=" font-size: 1.2em"><b>Year:</b> </p>
+                    <label for="movieDetails-actors" class="form-label" style="color: black; font-size: 1.2em"><b>Cast:</b></label>
+                    <p class="card-text" id="movieDetails-actors" style=" font-size: 1.2em"><b>Cast:</b> </p>
+                    <label for="movieDetails-genre" class="form-label" style="color: black; font-size: 1.2em"><b>Genre: </b></label>
+                    <p class="card-text" id="movieDetails-genre" style=" font-size: 1.2em"><b>Genre:</b> </p>
+                    <label for="movieDetails-rating" class="form-label" style="color: black; font-size: 1.2em"><b>Rating: </b></label>
+                    <p class="card-text" id="movieDetails-rating" style=" font-size: 1.2em"><b>Rating:</b> </p>
                     <div class="scrollable">
-                        <p class="card-text" id="movieDetails-plot"><b>Plot:</b> </p>
+                        <label for="movieDetails-plot" class="form-label" style="color: black; font-size: 1.2em"><b>Plot: </b></label>
+                        <p class="card-text" id="movieDetails-plot" style=" font-size: 1.2em"><b>Plot:</b> </p>
                     </div>
                 </div>
                 <div class="modal-footer">

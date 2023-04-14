@@ -14,11 +14,11 @@
     {
       "title": "Tenet",
       "rating": "5",
-      "poster": "https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SX300.jpg",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPDisx64YhGZRphM49slIezsoXV8Svxr0vmua6x0t4xcboK2pG&s",
       "year": "2020",
       "genre": "Action, Sci-Fi",
       "director": "Christopher Nolan",
-      "plot": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      "plot": "efhgadsfhsrdher",
       "actors": "Elizabeth Debicki, Robert Pattinson, John David Washington, Aaron Taylor-Johnson",
       "id": 2
     },
@@ -34,59 +34,59 @@
       "id": 3
     },
     {
-      "title": "Interstellar",
+      "title": "Wonder Woman",
       "rating": "5",
-      "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUw076GR7JpnfExoBLTMpiE9otUzk518SylUdC1roF6Ah63NS9",
-      "year": "2014",
-      "genre": "Sci-fi, Adventure, Drama",
-      "director": "Christopher Nolan",
-      "plot": "In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper (Matthew McConaughey) and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.",
-      "actors": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVjfGgqesqKhkkQGTVjddFf-J0F0rV5H6i5tgG22QdgqP4MOo&s",
+      "year": "2017",
+      "genre": "Sci-Fi, Action",
+      "director": "Patty Jenkins",
+      "plot": "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.",
+      "actors": "Gal Gadot, Chris Pine",
       "id": 4
-    },
-    {
-      "title": "inter 2",
-      "rating": "3",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-7dWfoyzqgevZdBY66I0rbDZwM-HU0QmahrEwUAe7wFBeU79-&s",
-      "year": "edited year 2075",
-      "genre": "Action, Horror, Sci-Fi, drama, comedy",
-      "director": "Paul W.S. Anderson",
-      "plot": "Test Plot 2",
-      "actors": "Ryan McCluskey,Oscar Pearce,Indra Ové,Anna Bolt",
-      "id": 5
-    },
-    {
-      "title": "Troy",
-      "director": "Wolfgang Petersen",
-      "year": "2006",
-      "actors": "Brad Pitt, Eric Bana, Eric Bana, Diane Kruger, Orlando Bloom",
-      "plot": "Based on Homer's \"Iliad,\" this epic portrays the battle between the ancient kingdoms of Troy and Sparta. While visiting Spartan King Menelaus (Brendan Gleeson), Trojan prince Paris (Orlando Bloom) falls for Menelaus' wife, Helen (Diane Kruger), and takes her back to Troy. Menelaus' brother, King Agamemnon (Brian Cox), having already defeated every army in Greece, uses his brother's fury as a pretext to declare war against Troy, the last kingdom preventing his control over the Aegean Sea.",
-      "genre": "War, Adventure",
-      "rating": "4",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDLiVA8xcd6PNwPVCBaHGj51590CaSbwVniujups31WUhDxQWZ&s",
-      "id": 6
     },
     {
       "title": "Wonder Woman",
       "director": "Patty Jenkins",
       "year": "2017",
       "actors": "Gal Gadot, Chris Pine",
-      "plot": "Wonder Woman movie",
+      "plot": "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.",
       "genre": "Sci-Fi, Action",
       "rating": "5",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVjfGgqesqKhkkQGTVjddFf-J0F0rV5H6i5tgG22QdgqP4MOo&s",
-      "id": 7
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0apV1205XapWdPXBgOl9mGDAwz53fJZSh0rd08vL6qRvJnG2b&s",
+      "id": 5
     },
     {
-      "title": "Troy",
-      "director": "Wolfgang Petersen",
-      "year": "2004",
-      "actors": "Brad Pitt, Eric Bana, Eric Bana, Diane Kruger, Orlando Bloom",
-      "plot": "Based on Homer's \"Iliad,\" this epic portrays the battle between the ancient kingdoms of Troy and Sparta. While visiting Spartan King Menelaus (Brendan Gleeson), Trojan prince Paris (Orlando Bloom) falls for Menelaus' wife, Helen (Diane Kruger), and takes her back to Troy. Menelaus' brother, King Agamemnon (Brian Cox), having already defeated every army in Greece, uses his brother's fury as a pretext to declare war against Troy, the last kingdom preventing his control over the Aegean Sea.",
-      "genre": "War, Adventure",
-      "rating": "4",
-      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPDisx64YhGZRphM49slIezsoXV8Svxr0vmua6x0t4xcboK2pG&s",
-      "id": 8
+      "title": "Wonder Woman",
+      "director": "Patty Jenkins",
+      "year": "2017",
+      "actors": "Gal Gadot, Chris Pine",
+      "plot": "Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that's raging in the outside world. Convinced that she can stop the threat, Diana leaves her home for the first time. Fighting alongside men in a war to end all wars, she finally discovers her full powers and true destiny.",
+      "genre": "Sci-Fi, Action",
+      "rating": "5",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0apV1205XapWdPXBgOl9mGDAwz53fJZSh0rd08vL6qRvJnG2b&s",
+      "id": 6
+    },
+    {
+      "title": "Tenet",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SX300.jpg",
+      "year": "2020",
+      "genre": "Action, Sci-Fi",
+      "director": "Christopher Nolan",
+      "plot": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      "actors": "Elizabeth Debicki, Robert Pattinson, John David Washington, Aaron Taylor-Johnson",
+      "id": 2
+    },
+    {
+      "title": "Resident Evil",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZmI1ZGRhNDYtOGVjZC00MmUyLThlNTktMTQyZGE3MzE1ZTdlXkEyXkFqcGdeQXVyNDE5MTU2MDE@._V1_SX300.jpg",
+      "year": "2002",
+      "genre": "Action, Horror, Sci-Fi",
+      "director": "Paul W.S. Anderson",
+      "plot": "A special military unit fights a powerful, out-of-control supercomputer and hundreds of scientists who have mutated into flesh-eating creatures after a laboratory accident.",
+      "actors": "Ryan McCluskey, Oscar Pearce, Indra Ové, Anna Bolt",
+      "id": 3
     }
   ]
 }

@@ -25,14 +25,14 @@ function loadMovies() {
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
                          <div class="card mx-auto px-2" style="width: 100%;" id="cardId" data-id="${movie.id}">
+                            <h5 class="card-title" id="movie-title">${movie.title}</h5>
                             <img src="${movie.poster}" class="card-img-top mx-auto" style="width: 80%; height: 80%" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title" id="movie-title">${movie.title}</h5>
                                     <p class="card-text" id="movie-dir"><b>Director:</b> ${movie.director}</p>
                                     <p class="card-text" id="movie-year"><b>Year:</b>  ${movie.year}</p>
                                     <div class="d-flex justify-content-evenly">
-                                    <button type="button" class="edit" id="editBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="popUpModal(${movie.id})">Edit</button>
-                                    <button type="button" class="movieDetails" id="movieDetailsBtn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieDetailsModal" onclick="movieDetailsModal(${movie.id})">Details</button>
+                                    <button type="button" class="edit btn" id="editBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#myModal" onclick="popUpModal(${movie.id})">Edit</button>
+                                    <button type="button" class="movieDetails btn" id="movieDetailsBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#movieDetailsModal" onclick="movieDetailsModal(${movie.id})">Details</button>
                                     </div>
                                 </div>
                         </div>
@@ -61,24 +61,49 @@ function popUpModal(id) {
                 $('#myModal').modal('hide');
                 loadMovies();
             })
+            document.getElementById("deleteMovie").addEventListener("click", function (){
+                // e.preventDefault();
+                deleteMovieById(movieData.id);
+                $('#myModal').modal('hide');
+                loadMovies();
+
+            })
+            document.getElementById("editCloseBtn").addEventListener("click", function (){
+                clearEditModal();
+                $('#myModal').modal('hide');
+
+            })
         })
     }
 // ***** POPULATES THE MODAL WITH PRESET MOVIE DATA VALUES TO BE EDITED.
 function populateEditModal(movie){
     // console.log(movie.title)
 
-    let currentTitle = document.getElementById("movieTitle").value = "You are Currently Editing" + movie.title
-    let userEditedTitle = document.getElementById("userEditedTitle").value = movie.title
-    let userEditedDir = document.getElementById("userEditedDir").value = movie.director
-    let userEditedYear = document.getElementById("userEditedYear").value = movie.year
-    let userEditedActors = document.getElementById("userEditedActors").value = movie.actors
-    let userEditedPlot = document.getElementById("userEditedPlot").value = movie.plot
-    let userEditedGenre = document.getElementById("userEditedGenre").value = movie.genre
-    let userEditedRating = document.getElementById("userEditedRating").value = movie.rating
-    let userEditedPoster = document.getElementById("userEditedPoster").value = movie.poster
+    document.getElementById("movieTitle").textContent = "Your are editing: " + movie.title
+    document.getElementById("userEditedTitle").value = movie.title
+    document.getElementById("userEditedDir").value = movie.director
+    document.getElementById("userEditedYear").value = movie.year
+    document.getElementById("userEditedActors").value = movie.actors
+    document.getElementById("userEditedPlot").value = movie.plot
+    document.getElementById("userEditedGenre").value = movie.genre
+    document.getElementById("userEditedRating").value = movie.rating
+    document.getElementById("userEditedPoster").value = movie.poster
     }
 
 // ************************************************************
+
+function clearEditModal(movie){
+    // console.log(movie.title)
+
+    document.getElementById("userEditedTitle").value = ""
+    document.getElementById("userEditedDir").value = ""
+    document.getElementById("userEditedYear").value = ""
+    document.getElementById("userEditedActors").value = ""
+    document.getElementById("userEditedPlot").value = ""
+    document.getElementById("userEditedGenre").value = ""
+    document.getElementById("userEditedRating").value = ""
+    document.getElementById("userEditedPoster").value = ""
+}
 
 // EDIT MOVIE
 
@@ -131,12 +156,30 @@ function addNewMovie(){
         .then(resp => resp.json())
         .then(movieData => console.log(movieData))
         .catch(error => console.error(error));
-}
+    }
+
+    function clearAddMovieInputs(){
+        document.getElementById("addMovieTitle").value = ""
+        document.getElementById("addMovieDir").value = ""
+        document.getElementById("addMovieYear").value = ""
+        document.getElementById("addMovieActors").value = ""
+        document.getElementById("addMoviePlot").value = ""
+        document.getElementById("addMovieGenre").value = ""
+        document.getElementById("addMovieRating").value = ""
+        document.getElementById("addMoviePoster").value = ""
+
+    }
 
 document.getElementById("saveNewMovie").addEventListener("click", function (e){
     addNewMovie();
+    clearAddMovieInputs();
     $('#addMovieModal').modal('hide');
     loadMovies();
+})
+
+document.getElementById("addMovieCloseBtn").addEventListener("click", function (){
+    clearAddMovieInputs();
+    $('#myModal').modal('hide');
 })
 
 document.getElementById("flexSwitchCheckDefault").addEventListener("click",() =>{
@@ -175,6 +218,76 @@ function movieDetailsModal(id) {
        document.getElementById("movieDetails-rating").textContent = movie.rating
 
     }
+
+
+//     ******** DELETE MOVIE *******
+function deleteMovieById(id){
+    fetch(`http://localhost:3000/movies/${id}`, {
+        method: "DELETE",
+
+    }).then(resp => resp.json())
+        .then(data => {
+            console.log(data)
+
+        })
+        .catch(error => console.error(error))
+}
+
+// function renderMovies(movie){
+//     let moviesHTML = movie.map(movie =>{
+//
+//         return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
+//                          <div class="card mx-auto px-2" style="width: 100%;" id="cardId" data-id="${movie.id}">
+//                             <h5 class="card-title" id="movie-title">${movie.title}</h5>
+//                             <img src="${movie.poster}" class="card-img-top mx-auto" style="width: 80%; height: 80%" alt="...">
+//                                 <div class="card-body">
+//                                     <p class="card-text" id="movie-dir"><b>Director:</b> ${movie.director}</p>
+//                                     <p class="card-text" id="movie-year"><b>Year:</b>  ${movie.year}</p>
+//                                     <div class="d-flex justify-content-evenly">
+//                                     <button type="button" class="edit btn" id="editBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#myModal" onclick="popUpModal(${movie.id})">Edit</button>
+//                                     <button type="button" class="movieDetails btn" id="movieDetailsBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#movieDetailsModal" onclick="movieDetailsModal(${movie.id})">Details</button>
+//                                     </div>
+//                                 </div>
+//                         </div>
+//                         </section>`
+//     })
+//     document.getElementById("movie-cards").innerHTML=moviesHTML.join("");
+//
+// }
+// function renderMovies(movies) {
+//     var html = '';
+//     // console.log(coffees)
+//     for(var i = 0; i < movies.length; i++) {
+//         html += renderMovie(movies[i]);
+//     }
+//     return html;
+// }
+
+// function updateMovieInput(e) {
+//     e.preventDefault();
+//     let movieUserInput = userInput.value.toLowerCase()
+//     console.log(movieUserInput);
+//     let movieHolic = [];
+//     fetch("http://localhost:3000/movies")
+//         .then(resp => resp.json())
+//         .then(movieData => {
+//             movieData.forEach(function (movie) {
+//                 if (userInput.value === "") {
+//                     // alert("you did non enter a movie title")
+//                 } else if (movie.title.toLowerCase().includes(movieUserInput)) {
+//                     movieHolic.push(movie);
+//                 }
+//
+//             })
+//         })
+//
+//     renderMovies(movieHolic);
+//
+// }
+//
+// let userInput = document.getElementById("userLocalSearch")
+// userInput.addEventListener('click', updateMovieInput);
+
 
 //
 // const options = {
