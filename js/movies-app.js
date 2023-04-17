@@ -318,7 +318,7 @@ function deleteMovieById(id){
 // const options = {
 //     method: 'GET',
 //     headers: {
-//         'X-RapidAPI-Key': 'eaf19d1d67msh2ddf4f7b0805fa3p15683fjsn816ec801716c',
+//         'X-RapidAPI-Key': RAPID_API,
 //         'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
 //     }
 // };
