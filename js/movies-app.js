@@ -20,8 +20,9 @@ function loadMovies() {
     fetch("http://localhost:3000/movies")
         .then(resp => resp.json())
         .then(movieData => {
-            // console.log("line 23: " + movieData)
+            console.log("line 23: " + movieData)
            let moviesHTML = movieData.map(movie =>{
+               console.log(movie)
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
                          <div class="card mx-auto px-2" style="width: 100%;" id="cardId">
