@@ -1,18 +1,18 @@
 "use strict";
 
-    // ************ LOADER *******************
-    $('body').append('<div style="" class="d-flex justify-content-center" id="loadingDiv" ><img id="loading-image" src="/img/loading.gif" alt="Loading..." /></div>');
-    $(window).on('load', function () {
-        setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
-    });
-    function removeLoader() {
-        $("#loadingDiv").fadeOut(500, function () {
-            // fadeOut complete. Remove the loading div
-            $("#loadingDiv").remove(); //makes page more lightweight
-        });
-        loadMovies();
-
-    }
+    // // ************ LOADER *******************
+    // $('body').append('<div style="" class="d-flex justify-content-center" id="loadingDiv" ><img id="loading-image" src="/img/loading.gif" alt="Loading..." /></div>');
+    // $(window).on('load', function () {
+    //     setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+    // });
+    // function removeLoader() {
+    //     $("#loadingDiv").fadeOut(500, function () {
+    //         // fadeOut complete. Remove the loading div
+    //         $("#loadingDiv").remove(); //makes page more lightweight
+    //     });
+    //     loadMovies();
+    //
+    // }
     // *******************************************************************************************************
 
 // *********** POPULATING MOVIE CARDS ON HTML **************
@@ -20,45 +20,55 @@ function loadMovies() {
     fetch("http://localhost:3000/movies")
         .then(resp => resp.json())
         .then(movieData => {
-            console.log("line 23: " + movieData)
+            // console.log("line 23: " + movieData)
            let moviesHTML = movieData.map(movie =>{
-               console.log(movie)
+               // console.log(movie)
 
                 return `<section class="d-flex col-12 col-sm-6 col-lg-4 col-xl-4 col-xxl-2 mx-auto mt-2">
                          <div class="card mx-auto px-2" style="width: 100%;" id="cardId">
                             <h5 class="card-title" id="movie-title">${movie.title}</h5>
                             <img src="${movie.poster}" class="card-img-top mx-auto" style="width: 80%; height: 80%" alt="...">
-                                <div class="card-body">
+                                <div class="card-body" id="cardBody">
+                                    <input id="movieId" value="${movie.id}">
                                     <p class="card-text" id="movie-dir"><b>Director:</b> ${movie.director}</p>
                                     <p class="card-text" id="movie-year"><b>Year:</b>  ${movie.year}</p>
                                     <div class="d-flex justify-content-evenly">
-                                    <button type="button" class="edit btn" id="editBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#myModal" onclick="popUpModal(${movie.id})">Edit</button>
+                                    <button type="button" class="edit btn" id="editBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" onclick="popUpModal(${movie.id})" data-bs-target="#myModal" >Edit</button>
                                     <button type="button" class="movieDetails btn" id="movieDetailsBtn" style="color: white; background-color: darkslategray" data-bs-toggle="modal" data-bs-target="#movieDetailsModal" onclick="movieDetailsModal(${movie.id})">Details</button>
                                     </div>
                                 </div>
                         </div>
                         </section>`
+
             })
+
             document.getElementById("movie-cards").innerHTML=moviesHTML.join("");
-        })
-        .catch(error => {console.error(error)}
-        );
+            })
+
+
+        .catch(error =>
+            {console.error(error)
+            });
 }
 
-// *********** WHEN EDIT BTN IS THIS FUNCTION IS TRIGGERED AND popUpModal FUNCTION IS CALLED ************
 
-function popUpModal(id) {
-    fetch(`http://localhost:3000/movies/${id}`)
+
+loadMovies();
+
+// *********** WHEN EDIT BTN IS CLICKED THIS FUNCTION IS TRIGGERED AND popUpModal FUNCTION IS CALLED ************
+
+function popUpModal(id) { // <--- FUNCTION TO BE CALLED WHEN EDIT BTN ON YOUR CARD IS CLICKED
+    fetch(`http://localhost:3000/movies/${id}`)// <--- DOING INITIAL FETCH TO SPECIFY THE MOVIE TO BE EDITED BY THE ID
         .then(resp => resp.json())
         .then(movieData => {
             console.log(movieData.id)
             // movieData.title
-            populateEditModal(movieData);
-            document.getElementById("saveEdits").addEventListener("click", function (){
+            populateEditModal(movieData); // <--- FUNCTION CALL TO POPULATE YOUR FORM WITH EXISTING MOVIE DATA
+            document.getElementById("saveEdits").addEventListener("click", function (){ // <-- SETTING EVENT LISTENER ON THE SAVE BTN INSIDE MODAL
                 // e.preventDefault();
                 console.log("line 60: " + movieData.id)
 
-                fetch(`http://localhost:3000/movies/${movieData.id}`, {
+                fetch(`http://localhost:3000/movies/${movieData.id}`, { // <-- DOING THE FINAL FETCH REQUEST TO EDIT THE MOVIE
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json"
@@ -66,7 +76,7 @@ function popUpModal(id) {
                     body: JSON.stringify(
                         {
                             id: movieData.id,
-                            title: document.getElementById("userEditedTitle").value,
+                            title: document.getElementById("userEditedTitle").value, // <-- TARGETING EACH FORM INPUT THAT CONTAIN THE NEW VALUES USER INPUTTED.
                             director: document.getElementById("userEditedDir").value,
                             year: document.getElementById("userEditedYear").value,
                             actors: document.getElementById("userEditedActors").value,
@@ -82,7 +92,7 @@ function popUpModal(id) {
                     .then(movieData => console.log(movieData))
                     .catch(error => console.error(error));
 
-                $('#myModal').modal('hide');
+                document.getElementById("myModal").modal('hide');
                 clearEditModal();
                 loadMovies();
             })
@@ -132,31 +142,31 @@ function clearEditModal(){
 
 // EDIT MOVIE
 
-// function editMovieById(id){
-//         fetch(`http://localhost:3000/movies/${id}`, {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(
-//                 {
-//                     id: id,
-//                     title: document.getElementById("userEditedTitle").value,
-//                     director: document.getElementById("userEditedDir").value,
-//                     year: document.getElementById("userEditedYear").value,
-//                     actors: document.getElementById("userEditedActors").value,
-//                     plot: document.getElementById("userEditedPlot").value,
-//                     genre: document.getElementById("userEditedGenre").value,
-//                     rating: document.getElementById("userEditedRating").value,
-//                     poster: document.getElementById("userEditedPoster").value
-//
-//                 }
-//                 )
-//         })
-//             .then(resp => resp.json())
-//             .then(movieData => console.log(movieData))
-//             .catch(error => console.error(error));
-// }
+function editMovieById(id){
+        fetch(`http://localhost:3000/movies/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                {
+                    id: id,
+                    title: document.getElementById("userEditedTitle").value,
+                    director: document.getElementById("userEditedDir").value,
+                    year: document.getElementById("userEditedYear").value,
+                    actors: document.getElementById("userEditedActors").value,
+                    plot: document.getElementById("userEditedPlot").value,
+                    genre: document.getElementById("userEditedGenre").value,
+                    rating: document.getElementById("userEditedRating").value,
+                    poster: document.getElementById("userEditedPoster").value
+
+                }
+                )
+        })
+            .then(resp => resp.json())
+            .then(movieData => console.log(movieData))
+            .catch(error => console.error(error));
+}
 
 // ******** ADD NEW MOVIE ***************
 

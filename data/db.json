@@ -61,7 +61,7 @@
       "director": "Jaume Collet-Serra",
       "year": "2022",
       "actors": "Dwayne Johnson, Sarah Shahi, Henry Cavill, Pierce Brosnan, Quintessa Swindell, Noah Centineo",
-      "plot": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone." ,
+      "plot": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone.",
       "genre": "Action, Adventure, Sci-Fi",
       "rating": "3",
       "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7z46quZTThLvU4GVoaKuD0at1K9oUCdnI8C4O8lwm6F1KpYFt"
@@ -72,7 +72,7 @@
       "director": "Alex Proyas",
       "year": "2009",
       "actors": "Nicolas Cage, Rose Byrne, Chandler Canterbury, Lara Robinson, Nadia Townsend, Liam Hemsworth",
-      "plot": "Fifty years after it was buried in a time capsule, a schoolgirl's cryptic document falls into the hands of Caleb Koestler, the son of professor John Koestler (Nicolas Cage). John figures out that the encoded message accurately lists every major disaster from the past five decades, and predicts three future calamities -- one a global cataclysm. When his warnings fall on deaf ears, John enlists the help of the prophetic author's daughter and granddaughter to try to avert the ultimate disaster." ,
+      "plot": "Fifty years after it was buried in a time capsule, a schoolgirl's cryptic document falls into the hands of Caleb Koestler, the son of professor John Koestler (Nicolas Cage). John figures out that the encoded message accurately lists every major disaster from the past five decades, and predicts three future calamities -- one a global cataclysm. When his warnings fall on deaf ears, John enlists the help of the prophetic author's daughter and granddaughter to try to avert the ultimate disaster.",
       "genre": "Action, Adventure, Sci-Fi, Thriller",
       "rating": "4",
       "poster": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwRJPhw03lFZboKq6GVRhV9rDeGisa30BM3k5CWQbEH5959wBP"
@@ -83,7 +83,7 @@
       "director": "Martin Scorsese",
       "year": "2006",
       "actors": "Vera Farmiga, Jack Nicholson, Leonardo DiCaprio, Matt Damon, Mark Wahlberg",
-      "plot": "South Boston cop Billy Costigan (Leonardo DiCaprio) goes under cover to infiltrate the organization of gangland chief Frank Costello (Jack Nicholson). As Billy gains the mobster's trust, a career criminal named Colin Sullivan (Matt Damon) infiltrates the police department and reports on its activities to his syndicate bosses. When both organizations learn they have a mole in their midst, Billy and Colin must figure out each other's identities to save their own lives." ,
+      "plot": "South Boston cop Billy Costigan (Leonardo DiCaprio) goes under cover to infiltrate the organization of gangland chief Frank Costello (Jack Nicholson). As Billy gains the mobster's trust, a career criminal named Colin Sullivan (Matt Damon) infiltrates the police department and reports on its activities to his syndicate bosses. When both organizations learn they have a mole in their midst, Billy and Colin must figure out each other's identities to save their own lives.",
       "genre": "Crime, Drama, Thriller",
       "rating": "4",
       "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSU0SP40gBSnIxxWMpN4-OYUXDRKsOFZX6L5dNv0srZlwKiAlvy"
@@ -142,6 +142,17 @@
       "genre": "Action, Crime, Drama, Thriller",
       "rating": "5",
       "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuzbCGfiyGHbZmLdVBytmxhAUVTSqkEKMHcse84GDyiJqOizBY"
+    },
+    {
+      "title": "sfd",
+      "director": "rgfe",
+      "year": "erge",
+      "actors": "erg",
+      "plot": "erger",
+      "genre": "erge",
+      "rating": "erg",
+      "poster": "",
+      "id": 14
     }
   ]
 }
